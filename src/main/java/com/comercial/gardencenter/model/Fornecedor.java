@@ -36,6 +36,9 @@ public class Fornecedor {
 	
 	@Pattern(regexp = "\\d{10,11}", message = "O telefone deve ter 10 ou 11 dígitos numéricos.") //Aceita números de 10 e 11 dígitos, fone fixo ou celular.
 	private String telefone;
+
+	//Falta relacionamento
+	
 	
 	//Getters e Setters
 

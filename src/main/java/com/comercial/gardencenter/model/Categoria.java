@@ -20,6 +20,8 @@ public class Categoria {
 	@NotBlank(message="O nome é obrigatório.")
 	private String nomecategoria;
 	
+	//Falta relacionamento
+	
 	//Getters e Setters
 
 	public Long getIdcategoria() {

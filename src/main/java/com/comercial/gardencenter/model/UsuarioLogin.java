@@ -1,5 +1,9 @@
 package com.comercial.gardencenter.model;
 
+
+// classe DTO (Data Transfer Object)
+// serve apenas para receber dados de login
+
 public class UsuarioLogin {
 	
 	//Dados de entrada:

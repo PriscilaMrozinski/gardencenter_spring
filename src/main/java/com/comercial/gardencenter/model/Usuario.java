@@ -41,6 +41,10 @@ public class Usuario {
 	private String senha;
 	
 	//senha = passwordEncoder.encode(senha); --- falta adicionar security!
+	
+	//Falta relacionamento
+	
+	
 	// Getters e Setters
 
 	public Long getIdusuario() {

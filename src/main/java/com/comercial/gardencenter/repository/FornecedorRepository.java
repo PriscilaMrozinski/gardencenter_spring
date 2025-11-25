@@ -1,5 +1,17 @@
 package com.comercial.gardencenter.repository;
 
-public interface FornecedorRepository {
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.comercial.gardencenter.model.Fornecedor;
+import com.comercial.gardencenter.model.Produto;
+
+public interface FornecedorRepository extends JpaRepository<Fornecedor, Long> {
+	public List<Fornecedor> findAllByNomefornecedorContainingIgnoreCase(String nomefornecedor);
+	public List<Fornecedor> findAllByCnpjContaining(String cnpj); //permite também procurar por parte do cnpj
+	//public Fornecedor findByCnpj(String cnpj); //buscaria pelo cnpj exato
+
+	
 
 }

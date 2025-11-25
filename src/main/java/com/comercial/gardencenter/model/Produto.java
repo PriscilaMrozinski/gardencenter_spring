@@ -42,6 +42,8 @@ public class Produto {
 	
 	private String foto;
 	
+	//Falta relacionamento
+	
 	
 	//Getters e Setters
 
