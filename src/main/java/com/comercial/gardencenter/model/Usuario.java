@@ -1,10 +1,13 @@
 package com.comercial.gardencenter.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -24,7 +27,7 @@ public class Usuario {
 	private String nomeusuario;
 	
 	@Column(length=11)
-	@NotBlank(message="O cpf do usuário é obrigatório.")
+	@NotBlank(message="O cpf do usuario é obrigatório.")
 	@Pattern(regexp = "\\d{11}", message = "O CPF deve conter exatamente 11 dígitos numéricos.") //Pattern valida Strings, verifica se valor possui formato específico.
 	private String cpf;
 	
@@ -42,60 +45,96 @@ public class Usuario {
 	
 	//senha = passwordEncoder.encode(senha); --- falta adicionar security!
 	
-	//Falta relacionamento
-	
-	
-	// Getters e Setters
+	//Relacionamento Fornecedor
+	@ManyToOne
+	@JsonIgnoreProperties("usuarios")
+	private Fornecedor fornecedor;
 
+
+
+	// Getters e Setters
+	
 	public Long getIdusuario() {
 		return idusuario;
 	}
+
+
 
 	public void setIdusuario(Long idusuario) {
 		this.idusuario = idusuario;
 	}
 
+
+
 	public String getNomeusuario() {
 		return nomeusuario;
 	}
+
+
 
 	public void setNomeusuario(String nomeusuario) {
 		this.nomeusuario = nomeusuario;
 	}
 
+
+
 	public String getCpf() {
 		return cpf;
 	}
+
+
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
+
+
 	public String getFuncao() {
 		return funcao;
 	}
+
+
 
 	public void setFuncao(String funcao) {
 		this.funcao = funcao;
 	}
 
+
+
 	public String getEmail() {
 		return email;
 	}
+
+
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+
+
 	public String getSenha() {
 		return senha;
 	}
 
+
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 
-	
+
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+		
 
 }
